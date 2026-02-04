@@ -4,8 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- Root Container -->
+    <div class="container">
+        <h1>To Do List</h1>
+
+        <!-- To Do Form -->
+        <form class="todo-form">
+            <!-- Input Bar to Put Tasks -->
+            <div class="input-bar">
+                <input type="text">
+                <button type="submit">Add</button>
+            </div>
+
+            <!-- Tasks Container -->
+            <div class="todo-container">
+
+                <!-- Task Bar storing the task-->
+                <div class="task-bar">
+                    <input type="checkbox">
+                    <p>This is task 1</p>
+                    <button class="delete-btn">Del</button>
+                </div>
+
+                <div class="task-bar">
+                    <input type="checkbox">
+                    <p style="text-decoration: line-through;">This is task 2</p>
+                    <button class="delete-btn">Del</button>
+                </div> 
+
+                <div class="task-bar">
+                    <input type="checkbox">
+                    <p>I want to make a player character</p>
+                    <button class="delete-btn">Del</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
