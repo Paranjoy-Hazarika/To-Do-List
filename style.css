@@ -9,6 +9,8 @@
 button {
     cursor: pointer;
     padding: 5px;
+
+    width: 150px;
 }
 
 body {
@@ -25,9 +27,10 @@ body {
 
     align-items: center;
     justify-content: center;
-    
+
     gap: 30px;
     padding: 10px;
+    width: 800px;
     /* background-color: yellow; */
 }
 
@@ -55,7 +58,7 @@ h1 {
 
 .input-bar input[type=text] {
     width: 100%;
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 .todo-container {

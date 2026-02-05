@@ -16,34 +16,34 @@
         <form class="todo-form">
             <!-- Input Bar to Put Tasks -->
             <div class="input-bar">
-                <input type="text">
-                <button type="submit">Add</button>
-            </div>
-
-            <!-- Tasks Container -->
-            <div class="todo-container">
-
-                <!-- Task Bar storing the task-->
-                <div class="task-bar">
-                    <input type="checkbox">
-                    <p>This is task 1</p>
-                    <button class="delete-btn">Del</button>
-                </div>
-
-                <div class="task-bar">
-                    <input type="checkbox">
-                    <p style="text-decoration: line-through;">This is task 2</p>
-                    <button class="delete-btn">Del</button>
-                </div> 
-
-                <div class="task-bar">
-                    <input type="checkbox">
-                    <p>I want to make a player character</p>
-                    <button class="delete-btn">Del</button>
-                </div>
-
+                <input type="text" id="input-textbox">
+                <button type="submit" id="add-btn">Add</button>
             </div>
         </form>
+
+        <!-- Tasks Container -->
+        <div class="todo-container">
+
+            <!-- Task Bar storing the task-->
+            <div class="task-bar">
+                <!-- <input type="checkbox" id="task-check"> -->
+                <p id="task-content">This is task 1</p>
+                <button id="done-btn">Done</button>
+            </div>
+
+            <div class="task-bar">
+                <!-- <input type="checkbox" id="task-check"> -->
+                <p id="task-content" style="text-decoration: line-through;">This is task 2</p>
+                <button id="done-btn">Done</button>
+            </div> 
+
+            <div class="task-bar">
+                <!-- <input type="checkbox" id="task-check"> -->
+                <p id="task-content">Make a player character</p>
+                <button id="done-btn">Done</button>
+            </div>
+
+        </div>
     </div>
 
     <script src="script.js"></script>
