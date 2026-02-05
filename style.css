@@ -61,6 +61,10 @@ h1 {
     padding: 5px 10px;
 }
 
+.input-bar input[type=text]::placeholder {
+    font-style: italic;
+}
+
 .todo-container {
     display: flex;
     flex-direction: column;
