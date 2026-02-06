@@ -2,10 +2,13 @@ const todoForm = document.querySelector(".todo-form");
 const inputBar = document.querySelector(".input-bar");
 const todoContainer = document.querySelector(".todo-container");
 
-const addBtn = document.getElementById("add-btn");
+const overlayWindow = document.getElementById("overlay-window");
+const overlayCloseBtn = document.getElementById("overlay-closeBtn");
+const addBtn= document.getElementById("add-btn");
 const inputText = document.getElementById("input-textbox");
 
 let delBtn = document.querySelectorAll("#done-btn");
+let todoPara = document.querySelectorAll("#task-content");
 
 const insertTask = (todoTask,  todoTitle) => {
     return `
@@ -30,9 +33,10 @@ const deleteBtns = () => {
             // console.log(delBtn);
             item.addEventListener("click", (e) => {
                 e.preventDefault();
-        
+                
                 const parentElem = item.parentElement;
                 parentElem.remove();
+                updateTodoList();
             })
         })
     }
@@ -42,7 +46,7 @@ const deleteBtns = () => {
 const updateInputString = (inputString) => {
     if (inputString.length > 30) {
         inputString = inputString.slice(0, 30) + "...";
-        console.log(inputString);
+        // console.log(inputString);
         return inputString;
     }
     else {
@@ -50,30 +54,77 @@ const updateInputString = (inputString) => {
     }
 }
 
+
 const updateNewTodo = (inputString, inputTitle) => {
-    if (inputString != "") {
-        const taskNode = insertTask(inputString, inputTitle);
-        todoContainer.insertAdjacentHTML("beforeend", taskNode);
-    }
+    const taskNode = insertTask(inputString, inputTitle);
+    todoContainer.insertAdjacentHTML("beforeend", taskNode);
 }
 
 const updateDeleteBtns = () => {
     delBtn = document.querySelectorAll("#done-btn");
+    // updateTodoList();
     deleteBtns();
 }
 
+const updateTodoList = () => {
+    todoPara = document.querySelectorAll("#task-content");
+    console.log(todoPara);
+}
+
+const todoNumbers = (todoList) => {
+    const todoLength = todoList.length;
+    if (todoLength < 7) {
+        return true;
+    }
+    return false;
+}
+
+const showOverlay = () => {
+    overlayWindow.showModal();
+}
+
+// Check if the 
+
+const checkListValidity = (valid, inputContent) => {
+    if (inputContent != "") {
+        if (valid) {
+            const newString = updateInputString(inputContent);
+            updateNewTodo(newString, inputContent);
+        } else {
+            showOverlay();
+        }
+    }
+}
+
 // Modifying the Input String for clarity
+
+// console.log(todoPara);
 
 todoForm.addEventListener("submit", (e) => {
     e.preventDefault();
     
     const inputContent = inputText.value;
-    const newString = updateInputString(inputContent);
-    updateNewTodo(newString, inputContent);
-    
+    const todoLength = todoNumbers(todoPara);
+    checkListValidity(todoLength, inputContent);
+
     inputText.value = "";
+
     updateDeleteBtns();
-    console.log(delBtn);
+    updateTodoList();
+
+    // console.log(delBtn);
 })
 
 deleteBtns();
+
+// The todoPara Handling is just for making the default cases work - not needed at all - maybe if i add these in storage
+
+todoPara.forEach(item => {
+    item.setAttribute("title", item.textContent);
+    item.textContent = updateInputString(item.textContent);
+    // console.log(item);
+})
+
+overlayCloseBtn.addEventListener("click", (e) => {
+    overlayWindow.close();
+})
