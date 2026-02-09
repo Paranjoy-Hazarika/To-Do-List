@@ -1,6 +1,12 @@
+:root {
+    --heading-font: 3rem;
+    --primary-font: 1.5rem;
+    --overlay-font: 1.8rem
+}
+
 * {
     font-family: monospace;
-    font-size: 1.5rem;
+    font-size: var(--primary-font);
 
     margin: 0;
     padding: 0;
@@ -52,7 +58,8 @@ body {
 }
 
 #overlay-heading {
-    font-size: 1.8rem;
+    font-size: var(--overlay-font);
+    text-align: center;
 }
 
 #overlay-content {
@@ -61,7 +68,7 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: var(--heading-font);
     margin-top: 50px;
 }
 

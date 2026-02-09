@@ -1,0 +1,28 @@
+@media (max-width: 1000px) {
+    :root {
+        --heading-font: 2.3rem;
+        --primary-font: 1.2rem;
+        --overlay-font: 1.3rem
+    }
+
+    .todo-container {
+        gap: 30px;
+    }
+
+    .container {
+        padding: 0 50px;
+    }
+
+    button {
+        width: 60px;
+        min-width: 60px;
+    }
+
+    #overlay-container {
+        width: 200px;
+    }
+
+    #overlay-closeBtn {
+        min-width: 80px;
+    }
+}
