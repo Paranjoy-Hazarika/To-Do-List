@@ -28,7 +28,6 @@ To Do List/
 ├── Images/
 │       ├── To-Do-List 1.png
 │       └── To-Do-List 1.png
-│
 ├── index.html
 ├── style.css
 ├── responsive.css
