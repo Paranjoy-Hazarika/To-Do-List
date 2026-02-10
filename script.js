@@ -44,7 +44,7 @@ const deleteBtns = () => {
     }
 }
 
-// Updating the Todo String
+// Modifying and Updating the Todo String
 const updateInputString = (inputString) => {
     if (inputString.length > 30) {
         inputString = inputString.slice(0, 30) + "...";
@@ -56,23 +56,25 @@ const updateInputString = (inputString) => {
     }
 }
 
-
+// Add the task
 const updateNewTodo = (inputString, inputTitle) => {
     const taskNode = insertTask(inputString, inputTitle);
     todoContainer.insertAdjacentHTML("beforeend", taskNode);
 }
 
+// Update the new Done/Del Buttons
 const updateDeleteBtns = () => {
     delBtn = document.querySelectorAll("#done-btn");
-    // updateTodoList();
     deleteBtns();
 }
 
+// Update the new Todo List
 const updateTodoList = () => {
     todoPara = document.querySelectorAll("#task-content");
     console.log(todoPara);
 }
 
+// Constraints on number of Todo
 const todoNumbers = (todoList) => {
     const todoLength = todoList.length;
     if (todoLength < maxTasks) {
@@ -81,12 +83,12 @@ const todoNumbers = (todoList) => {
     return false;
 }
 
+// Show overlay
 const showOverlay = () => {
     overlayWindow.showModal();
 }
 
-// Check if the 
-
+// Check if the new task is valid for putting in the List
 const checkListValidity = (valid, inputContent) => {
     if (inputContent != "") {
         if (valid) {
@@ -97,10 +99,6 @@ const checkListValidity = (valid, inputContent) => {
         }
     }
 }
-
-// Modifying the Input String for clarity
-
-// console.log(todoPara);
 
 todoForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -116,8 +114,6 @@ todoForm.addEventListener("submit", (e) => {
 
     // console.log(delBtn);
 })
-
-deleteBtns();
 
 // The todoPara Handling is just for making the default cases work - not needed at all - maybe if i add these in storage
 
