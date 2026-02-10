@@ -23,8 +23,12 @@ It was made using the following technologies:
 
 File Structure for the project:
 
-```bash
+```text
 To Do List/
+├── Images/
+│       ├── To-Do-List 1.png
+│       └── To-Do-List 1.png
+│
 ├── index.html
 ├── style.css
 ├── responsive.css
