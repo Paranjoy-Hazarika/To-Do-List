@@ -10,6 +10,8 @@ const inputText = document.getElementById("input-textbox");
 let delBtn = document.querySelectorAll("#done-btn");
 let todoPara = document.querySelectorAll("#task-content");
 
+const maxTasks = 7;
+
 const insertTask = (todoTask,  todoTitle) => {
     return `
     <div class="task-bar">
@@ -73,7 +75,7 @@ const updateTodoList = () => {
 
 const todoNumbers = (todoList) => {
     const todoLength = todoList.length;
-    if (todoLength < 7) {
+    if (todoLength < maxTasks) {
         return true;
     }
     return false;
